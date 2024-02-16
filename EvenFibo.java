@@ -3,43 +3,60 @@
 //3) Find the sum of the even vauled numbers whose values do not
 //      exceed four million
 
+import java.util.ArrayList;
+
 public class EvenFibo{
 
-    public static void main(String[] args){
+    public static double a = 1;
+    public static double b = 2;
+    public static double c = a + b;
+    public static long even_sum = 0;
 
-// varibles and fields
-        double a = 1;
-        double b = 2;
-        double c = a + b;
-        double d = 0;
-     
-        double i = 10;
-        System.out.println("Three axes to fall");
-        //for loop
-        //statement 1 sets variable; statement 2 defines conditons/ statement 3 increments the value
-        for(i = 0; i < 10; i++)
-        {
-     
-            System.out.println("i: " + i);
+    public static void even_fibb() {
+        // ArrayList goldenRatio = new ArrayList<double>(0.0);
+
+        for(int i = 0; i < 4000; i++) {
+
+            // System.out.println("i: " + i);
             
-            c = b;
-            d = c + b;
-            System.out.println()
-
-
-            // System.out.println("a: " + a +"b: " + b);
-            // c = a + b;
-            // System.out.println("c : " + c);
-            // b = c;
-            // System.out.println("b: " + b);
-            // d = c + b;
-            //--------------//
-            // System.out.println("c: " + c);
-            System.out.println("d: " + d + " \n"); 
+            if (even_sum > 4000000) {
+                break;
+            }
+            if (c % 2 == 0) {
+                even_sum += c;
+            }  
+            if (i == 2) {
+                even_sum += 2;
+            } 
+            c = a + b;
+            a = b;
+            b = c;
+            // goldenRatio.sum(even_sum);
+            // System.oussum);
         }
+        
+        System.out.println("even_sum: " + even_sum);
+    }
+/*-------- attempting to use a regular array
+    public static int[] test() {
+        int[] intArray = new int[3];
+        for( int i = 0; i < intArray.length; i ++) {
+            intArray[i] = i + 1;
+            System.out.println("index : " + i + " ,value: " +intArray[i]);
+        }
+        return intArray;
+    }----------------------------*/
 
+    public static void main(String[] args){
+        System.out.println("Three axes to fall");
+        even_fibb();
+        // int[] intArray;
+        // intArray = test();
+        // System.out.println("array length: " + intArray.length);
 
-
+        
 
     }
+
+
 }   
