@@ -4,7 +4,12 @@
  *          - Add factor to ArrayList factors
  *      2) Then divides test number by the most factor.
  *          - Reducing the max number for while loop.
- *      3) 
+ *      3)
+ * Documentation: 
+ *      1) Create a logger that can be turned on/off for debugging.
+ *      
+ *      2) Make a second version of logger that allows
+ *          users to find just the factors of testNum. 
  */
 import java.util.Scanner;
 import java.util.Arrays;
@@ -56,12 +61,15 @@ public class FinalPrime {
             if(testNum % i == 0) {
                 factors.add(i);
                 System.out.println("factors: " + factors.get(l));
-                System.out.println("j:" + j);
+                // System.out.println("j:" + j);
+                System.out.println("testNum: " + testNum + 
+                    "  /  factors.get(l): " + factors.get(l));
                 testNum = testNum / factors.get(l);
                 System.out.println("New testNum: " + testNum);
+       
         // Inner loop
-                j = primeFactors.size() - 1;
-                l += 1;
+                // j = primeFactors.size() - 1;
+                // l += 1;
                 // while(j < primeFactors.size()) {
                 //     // l is an integer iterator
                 //     System.out.println("\tprimeFactors: " + primeFactors);
@@ -74,10 +82,13 @@ public class FinalPrime {
                 //     j += 1;
                 //     break;
                 // }
-            // l += 1; // Goes at the end of the loop 
+
+            l += 1; // Goes at the end of the loop 
             }
         i += 1.0; // Outer loop iterater variable
         } // Outer while loop end
+
+        
         if(oriNum % 2 != 0) {
             primeFactors.remove(0);
         }
@@ -91,4 +102,20 @@ public class FinalPrime {
      * Finding the conversion of the the outer loop i iterator to
      *      to j int for returing the Factor ArrayList.
      */
+
+    /** Creation of the E10Logger class(){}
+     ===============================================
+     */
+
+    // class E10Logger {
+        
+    //     static boolean debug = true;
+
+    //     public static void LOG(String str) {
+    //         if (debug) {
+    //             System.out.println(str);
+    //         }
+    //     }
+    // }
+
 
